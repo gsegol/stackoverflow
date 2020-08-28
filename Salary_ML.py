@@ -42,6 +42,7 @@ def clean_data(df):
         df = pd.concat([df.drop(var, axis=1), pd.get_dummies(df[var], prefix=var, prefix_sep='_', drop_first=True)], axis=1)
 
     X = df
+    # return cleaned matrix X and vector y
     return X, y
 
 def find_optimal_lm_mod(X, y, cutoffs, test_size = .30, random_state=42, plot=True):
